@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: nacosDemo_1
+  cloud:
+    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#         ##以项目名称作为服务名注册
+#        service: ${spring.application.name}
+      ##使用nacos的配置中心
+      config:
+        server-addr: localhost:8848
+        #nacos config server 动态配置文件格式
+        file-extension: yaml
+        #nacos 配置中心功能，默认true
+        enabled: true
+        namespace: test #对应nacos的命名空间，如果不配置默认是public
